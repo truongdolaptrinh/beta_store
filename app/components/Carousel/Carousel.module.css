@@ -1,0 +1,6 @@
+@media (max-width: 450px) {
+  .carousel_img_mobile {
+    max-height: 150px;
+    height: 150px;
+  }
+}
