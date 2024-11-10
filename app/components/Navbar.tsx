@@ -2,22 +2,12 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Inter } from "next/font/google";
 import { IoMdMenu } from "react-icons/io";
 
 import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons"
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 import AuthButton from "./AuthButton/AuthButton";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export function NavigationMenuDemo() {
   const [menuOpen, setMenuOpen] = React.useState(false); // State to track the menu's open/close status
