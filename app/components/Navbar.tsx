@@ -9,6 +9,13 @@ import { cn } from "@/lib/utils";
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
 import AuthButton from "./AuthButton/AuthButton";
 
+import { Playfair_Display } from "@next/font/google";
+
+const playfair = Playfair_Display({
+  subsets: ["latin"], // optional, you can customize it
+  weight: "400", // optional, set font weight if needed
+});
+
 export function NavigationMenuDemo() {
   const [menuOpen, setMenuOpen] = React.useState(false); // State to track the menu's open/close status
 
@@ -30,16 +37,24 @@ export function NavigationMenuDemo() {
             placeholder="Search..."
             className="border border-gray-300 rounded-full px-4 py-2 w-[40rem] text-lg focus:outline-none focus:border-black"
           />
-          <div>
+          <div className={playfair.className}>
             <ul className="flex items-center space-x-8">
-              <li className="text-xl">About</li>
-              <li className="text-xl">Help</li>
-              <li className="text-xl">Contact</li>
+              <li className="text-xl">
+                <Link href={"/aboutus"}>About</Link>
+              </li>
+              <li className="text-xl">
+                <Link href={"/news"}>News</Link>
+              </li>
+              <li className="text-xl">
+                <Link href={"/contactus"}>Contact</Link>
+              </li>
             </ul>
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-center flex-1">
+      <div
+        className={`flex items-center justify-center flex-1 ${playfair.className}`}
+      >
         <span
           className="rounded-full border border-black px-5 py-2 text-xl mr-3 hover:bg-black hover:text-white transition duration-150 ease-in-out
           hidden sm:block
