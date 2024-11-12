@@ -3,18 +3,9 @@
 import * as React from "react";
 import Link from "next/link";
 import { IoMdMenu } from "react-icons/io";
-
 import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons"
 import { NavigationMenuLink } from "@/components/ui/navigation-menu";
-import AuthButton from "./AuthButton/AuthButton";
-
-import { Playfair_Display } from "@next/font/google";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"], // optional, you can customize it
-  weight: "400", // optional, set font weight if needed
-});
+import AuthButton from "../ui/AuthButton/AuthButton";
 
 export function NavigationMenuDemo() {
   const [menuOpen, setMenuOpen] = React.useState(false); // State to track the menu's open/close status
@@ -25,8 +16,8 @@ export function NavigationMenuDemo() {
 
   return (
     <div className="flex justify-around p-5 items-center sm:overflow-hidden relative z-10">
-      <div className="flex-1 flex items-center justify-center">
-        <Link href="/" className="text-5xl">
+      <div className="flex-1 flex items-center justify-start md:justify-center">
+        <Link href="/" className="text-2xl sm:text-5xl">
           𝕿𝕷𝖄 𝕾𝖙𝖔𝖗𝖊
         </Link>
       </div>
@@ -37,7 +28,7 @@ export function NavigationMenuDemo() {
             placeholder="Search..."
             className="border border-gray-300 rounded-full px-4 py-2 w-[40rem] text-lg focus:outline-none focus:border-black"
           />
-          <div className={playfair.className}>
+          <div className="">
             <ul className="flex items-center space-x-8">
               <li className="text-xl">
                 <Link href={"/aboutus"}>About</Link>
@@ -52,19 +43,8 @@ export function NavigationMenuDemo() {
           </div>
         </div>
       </div>
-      <div
-        className={`flex items-center justify-center flex-1 ${playfair.className}`}
-      >
-        <span
-          className="rounded-full border border-black px-5 py-2 text-xl mr-3 hover:bg-black hover:text-white transition duration-150 ease-in-out
-          hidden sm:block
-        "
-        >
-          Login
-        </span>
-        <span className="rounded-full border border-black px-5 py-2 text-xl bg-black text-white hidden sm:block">
-          SignUp
-        </span>
+      <div className={`flex items-center justify-center flex-1`}>
+        <AuthButton cssClassName="hidden sm:block" />
       </div>
       {/* Mobile Menu */}{" "}
       <div>
@@ -76,7 +56,7 @@ export function NavigationMenuDemo() {
       {/* Conditionally render the mobile menu */}
       {menuOpen && (
         <div
-          className={`absolute left-0 right-0 top-[7rem] bg-white rounded-lg shadow-lg p-5 transform transition-all duration-300 ease-in-out z-10 ${
+          className={`absolute left-0 right-0 top-[85%] bg-white rounded-lg shadow-lg p-5 transform transition-all duration-300 ease-in-out z-10 ${
             menuOpen
               ? "opacity-100 scale-100 visible"
               : "opacity-0 scale-95 invisible"
@@ -116,7 +96,9 @@ export function NavigationMenuDemo() {
               </Link>
             </li>
           </ul>
-          <AuthButton />
+          <div className="mt-3 flex items-center justify-center">
+            <AuthButton cssClassName="w-full text-center" />
+          </div>
         </div>
       )}
     </div>

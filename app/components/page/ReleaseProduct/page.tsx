@@ -1,63 +1,57 @@
 import React from "react";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import HeaderTitle from "../HeaderTitle/page";
-import { Playfair_Display } from "@next/font/google";
-
-const playfair = Playfair_Display({
-  subsets: ["latin"], // optional, you can customize it
-  weight: "400", // optional, set font weight if needed
-});
+import HeaderTitle from "../../ui/HeaderTitle/HeaderTitle";
 
 const products = [
   {
     name: "NOV",
     date: "28",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "NOV",
     date: "28",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "NOV",
     date: "28",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "NOV",
     date: "28",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "NOV",
     date: "28",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "NOV",
     date: "28",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
 ];
 
 const ReleaseProduct = () => {
   return (
-    <div className="space-y-4 gap-4">
+    <div className="space-y-4 gap-4 m-[12px] md:m-0">
       <HeaderTitle title="Already to sell !!" />
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between overflow-x-scroll md:overflow-visible gap-x-3 md:gap-x-0 scrollbar-none">
         {products.map((product, index) => (
           <Card key={index} className="w-full sm:w-[200px]">
             <CardContent className="pt-[4px] pl-3 pb-[8px]">
               <CardTitle
-                className={`font-normal sm:text-lg mt-[7px] pl-[0px] flex items-center gap-x-2 ${playfair.className}`}
+                className={`font-normal sm:text-lg mt-[7px] pl-[0px] flex items-center gap-x-2 `}
               >
                 <div className="text-3xl border-r-2 px-2">{product.name}</div>{" "}
                 <div className="text-2  xl">{product.date}</div>
@@ -67,9 +61,9 @@ const ReleaseProduct = () => {
               <Image
                 src={product.src}
                 alt={product.alt}
-                width={200}
-                height={100}
-                className="max-h-[150px] max-w-[130px] sm:max-h-[150px] sm:max-w-[200px]"
+                width={999}
+                height={999}
+                className="max-h-[100px] sm:max-h-[130px] sm:max-w-[200px]"
               />
             )}
             <CardContent className="pt-[4px] pl-3 pb-[8px]">

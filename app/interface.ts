@@ -1,4 +1,3 @@
-interface BrandCategory {
-  title: string;
-  items: string[];
+export interface AuthButtonProps {
+  cssClassName: string;
 }

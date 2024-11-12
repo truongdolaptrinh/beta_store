@@ -1,8 +1,7 @@
 import React from "react";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import { Card } from "@/components/ui/card";
 import Image from "next/image";
-import { FaArrowRightLong } from "react-icons/fa6";
-import HeaderTitle from "../HeaderTitle/page";
+import HeaderTitle from "../../ui/HeaderTitle/HeaderTitle";
 
 const products = [
   {
@@ -37,19 +36,20 @@ const products = [
 
 const HotProgram = () => {
   return (
-    <div className=" space-y-4 gap-4">
+    <div className=" space-y-4 gap-4 m-[12px] md:m-0">
       <HeaderTitle title="Sale for Customer" />
       <div className="overflow-x-auto scrollbar-none">
         <div className="flex gap-4 sm:w-full">
           {products.map((product, index) => (
-            <Card key={index} className="w-full sm:w-[200px] relative">
+            <Card key={index} className="w-full sm:w-[300px]">
               {product.src && product.alt && (
                 <Image
                   src={product.src}
                   alt={product.alt}
-                  width={200}
-                  height={200}
-                  className="max-h-[150px] max-w-[130px] sm:max-h-[250px] sm:max-w-[200px] rounded-xl"
+                  width={500}
+                  height={500}
+                  sizes="100vw"
+                  className="max-h-[250px] max-w-[250px] sm:max-h-[300px] sm:max-w-[300px] rounded-xl"
                 />
               )}
             </Card>

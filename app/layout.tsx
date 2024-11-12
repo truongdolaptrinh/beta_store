@@ -1,7 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { NavigationMenuDemo } from "./components/Navbar";
-import Footer from "./components/Footer";
+import { NavigationMenuDemo } from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import { Lora } from "next/font/google";
+
+const openLora = Lora({
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -15,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body className={openLora.className}>
         {/* <Header /> */}
         <NavigationMenuDemo />
         {children}

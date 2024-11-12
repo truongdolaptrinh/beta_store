@@ -1,53 +1,52 @@
 import React from "react";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import Image from "next/image";
-import style from "./page.module.css";
-import HeaderTitle from "../HeaderTitle/page";
+import HeaderTitle from "../../ui/HeaderTitle/HeaderTitle";
 
 const products = [
   {
     name: "Air Jordan 1",
     price: "120",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "Air Jordan 2",
     price: "130",
-    src: "/Shoes/Nike/banner1.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "Air Jordan 3",
     price: "140",
-    src: "/Shoes/Nike/banner2.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "Air Jordan 4",
     price: "150",
-    src: "/Shoes/Nike/banner3.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "Air Jordan 5",
     price: "160",
-    src: "/Shoes/Nike/banner4.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
   {
     name: "Air Jordan 6",
     price: "170",
-    src: "/Shoes/Nike/banner5.jpg",
+    src: "/Shoes/banner.jpg",
     alt: "Carousel Image 1",
   },
 ];
 
 const Recommended = () => {
   return (
-    <div className=" space-y-4 gap-4">
+    <div className="space-y-4 gap-4 m-[12px] md:m-0">
       <HeaderTitle title="Recommended for You" />
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between overflow-x-scroll md:overflow-visible gap-x-3 md:gap-x-0 scrollbar-none">
         {products.map((product, index) => (
           <Card key={index} className="w-full sm:w-[200px]">
             {product.src && product.alt && (
